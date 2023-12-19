@@ -12,7 +12,7 @@ resource "azurerm_network_interface" "nic" {
   ip_configuration {
     name                          = var.ip_configuration_name
     private_ip_address_version    = var.private_ip_address_version != null ? var.private_ip_address_version : var.public_ip_address_version
-    private_ip_address_allocation = var.private_ip_allocation_method != null ? var.private_ip_allocation_method : var.public_ip_allocation_method
+    private_ip_address_allocation = var.private_ip_allocation_method
     private_ip_address            = var.private_ip_address
     subnet_id                     = var.subnet_id
     public_ip_address_id          = var.create_public_ip ? azurerm_public_ip.public_ip[0].id : null
