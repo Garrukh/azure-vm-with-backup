@@ -57,7 +57,7 @@ variable "admin_username" {
 variable "public_ip_allocation_method" {
   description = "(Required) Defines the allocation method for this IP address. Possible values are Static or Dynamic."
   type        = string
-  default     = null
+  default     = "Static"
 }
 
 variable "public_ip_sku" {
@@ -310,7 +310,7 @@ variable "public_ip_address_version" {
 variable "private_ip_allocation_method" {
   description = "(Required) The allocation method used for the Private IP Address. Possible values are Dynamic and Static."
   type        = string
-  default     = null
+  default     = "Dynamic"
 }
 
 variable "public_ip_name" {

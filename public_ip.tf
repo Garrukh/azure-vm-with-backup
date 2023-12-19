@@ -7,7 +7,7 @@ resource "azurerm_public_ip" "public_ip" {
 
   sku                     = var.public_ip_sku
   sku_tier                = var.public_ip_sku_tier
-  allocation_method       = var.public_ip_allocation_method != null ? var.public_ip_allocation_method : var.private_ip_allocation_method
+  allocation_method       = var.public_ip_allocation_method
   zones                   = var.public_ip_zones
   ip_version              = var.public_ip_address_version != null ? var.public_ip_address_version : var.private_ip_address_version
   idle_timeout_in_minutes = var.idle_timeout_in_minutes
