@@ -9,13 +9,33 @@ variable "keyvault_rg_name" {
 }
 
 variable "keyvault_name" {
-  description = "Name of the keyvault in which the admin password will be stored"
+  description = "Name of the keyvault in which the admin password will be stored."
   type        = string
 }
 
 variable "secret_name" {
-  description = "Name of the secret in which the admin password will be stored"
+  description = "Name of the secret in which the admin password will be stored."
   type        = string
+}
+
+variable "recovery_vault_rg_name" {
+  description = "Resource group name in which the recevery services vault is located."
+  type        = string
+  default     = "null"
+}
+
+variable "recovery_vault_name" {
+  description = "Name of the recovery services vault."
+  type        = string
+}
+
+variable "backup_policy_id" {
+  description = "Id of the backup policy."
+  type        = string
+}
+
+variable "backup_operator_principal_id" {
+  description = "Id of the principal or group that will be assigned the 'Virtual Machine Operator (start/stop)' role."
 }
 
 variable "location" {
@@ -119,7 +139,6 @@ variable "vm_name" {
 variable "vm_size" {
   description = "(Required) The SKU which should be used for this Virtual Machine, such as Standard_F2."
   type        = string
-  default     = null
 }
 
 variable "license_type" {
@@ -244,7 +263,7 @@ variable "os_disk_storage_account_type" {
 variable "nic_name" {
   description = "(Required) The name of the Network Interface. Changing this forces a new resource to be created."
   type        = string
-  default     = "dev-nic"
+  default     = "default-nic"
 }
 
 variable "ip_configuration_name" {

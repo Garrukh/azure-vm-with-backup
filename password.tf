@@ -16,4 +16,5 @@ resource "azurerm_key_vault_secret" "admin_password" {
   name         = var.secret_name
   value        = random_password.admin_password[0].result
   key_vault_id = data.azurerm_key_vault.keyvault.id
+  content_type = var.admin_username
 }
