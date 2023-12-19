@@ -4,7 +4,7 @@ data "azurerm_key_vault" "keyvault" {
 }
 
 resource "random_password" "admin_password" {
-  count = var.admin_password == null ? 0 : 1
+  count = var.admin_password == null ? 1 : 0
   length  = 16
   lower   = true
   upper   = true
