@@ -21,7 +21,7 @@ variable "secret_name" {
 variable "recovery_vault_rg_name" {
   description = "Resource group name in which the recevery services vault is located."
   type        = string
-  default     = "null"
+  default     = null
 }
 
 variable "recovery_vault_name" {
